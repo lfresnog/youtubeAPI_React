@@ -5,7 +5,7 @@ import Header from '../Components/Header'
 import axios from 'axios';
 
 function App() {
-  const [data,setData] = useState(null);
+  const [data,setData] = useState([]);
   
   const onSearch = (search) => {
     if(search){
@@ -27,7 +27,10 @@ function App() {
     
   return (
     <div className="App">
-      <Header onSearch={onSearch}/>
+      <Header onSearch={onSearch} data={data}/>
+      <div className='Results'>
+        {data.map(elem => {return <span >{elem.snippet.title}</span>})}
+      </div>
     </div>
   );
 }

@@ -18,7 +18,6 @@ const Header = (props) => {
         <div className="searchButton" onClick={() => onSearch(document.getElementById("search").value)}>
             <img className="searchIcon" src={searchIcon} alt="2"/>
         </div>
-
     </div>
     );
 }
