@@ -1,0 +1,38 @@
+.Header{
+    width: 730px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    margin: 50px;
+}
+
+.logo{
+    width: 100px;
+    height: 60px;
+    display: flex;
+    object-fit: contain;
+}
+
+.searchButton{
+    width: 64px;
+    height: 32px;
+    display: flex;
+    object-fit: contain;
+}
+
+.searchInput{
+    border: 0px;
+    border-bottom: 3px solid #282828;
+    height: 32px;
+    width: 500px;
+    margin-left: 30px;
+    font-size: x-large;
+}
+
+.searchInput:focus {
+    border-color: #FF0000;
+}
+
+.searchIcon:hover{
+    cursor: pointer;
+}
