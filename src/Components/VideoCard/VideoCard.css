@@ -5,11 +5,16 @@
     margin-bottom: 60px;
 }
 
+.VideoCard:hover{
+    cursor: pointer;
+}
+
 .channel{
     width: 200px;
     height: 200px;
     display: flex;
     object-fit: contain;
+    margin-right: 20px;
 }
 
 .extra_info{
@@ -18,7 +23,7 @@
     justify-content: space-between;
 }
 
-.video_miniature{
+.video{
     display: flex;
     object-fit: contain;
     margin-right: 20px;

@@ -15,7 +15,7 @@ const Header = (props) => {
 
         <input className="searchInput" id="search" placeholder="Search"  />
 
-        <div className="searchButton" onClick={() => onSearch(document.getElementById("search").value)}>
+        <div className="searchButton" onClick={() => onSearch(document.getElementById("search").value,'name')}>
             <img className="searchIcon" src={searchIcon} alt="2"/>
         </div>
     </div>

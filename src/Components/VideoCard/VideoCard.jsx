@@ -3,11 +3,12 @@ import './VideoCard.css';
 
 const VideoCard = (props) => {
     const {miniature,title,channel,date,description,id} = props.data;
+    const {onSearch} = props;
 
     return(
-    <div className = "VideoCard">
-        <div className={(id.videoId)?`video_miniature`:`channel`}>
-            <img src={miniature} alt="1"/>
+    <div className = "VideoCard" onClick={() => onSearch(id.videoId,'id')}>
+        <div className={(id.videoId)?`video`:`channel`}>
+            <img src={miniature} alt="error"/>
         </div>
         <div className="info">
             <h3>{title}</h3>
