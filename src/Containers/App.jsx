@@ -1,13 +1,14 @@
 import React,{useState} from 'react';
 import './App.css';
 // import HomePage from '../Components/HomePage';
-import Header from '../Components/Header'
+import Header from '../Components/Header/Header'
+import VideoCard from '../Components/VideoCard/VideoCard'
 import axios from 'axios';
 
 function App() {
   const [data,setData] = useState([]);
   
-  const onSearch = (search) => {
+  const onSearch = (search,test) => {
     if(search){
       axios.get('https://www.googleapis.com/youtube/v3/search',{
         params:{
@@ -18,19 +19,34 @@ function App() {
         }
       })
       .then(response => {
-              const results = response.data.items;
+              const results = response.data.items.map((result)=>{
+                return {
+                  miniature:result.snippet.thumbnails.medium.url,
+                  title:result.snippet.title,
+                  channel:result.snippet.channelTitle,
+                  date:result.snippet.publishedAt.slice(0,10),
+                  description:result.snippet.description,
+                  id:result.id
+                }
+              });
               console.log(results);
               setData(results);
           }); 
     }
   };
+
+  const OnVideo = {}
     
   return (
     <div className="App">
       <Header onSearch={onSearch} data={data}/>
-      <div className='Results'>
-        {data.map(elem => {return <span >{elem.snippet.title}</span>})}
-      </div>
+
+      {(data !== [])?
+        <div className='search_results'>
+          {data.map(elem => {return <VideoCard key={elem.title} data={elem} />})}
+        </div>
+      :null}:
+
     </div>
   );
 }

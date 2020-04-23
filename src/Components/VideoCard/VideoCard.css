@@ -1,0 +1,32 @@
+.VideoCard{
+    width: 900px;
+    height: 180px;
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.channel{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    object-fit: contain;
+}
+
+.extra_info{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.video_miniature{
+    display: flex;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.info{
+    font-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

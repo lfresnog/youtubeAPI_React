@@ -1,7 +1,7 @@
 import React from 'react';
-import searchIcon from '../Assets/search.svg';
-import youtubeIcon from '../Assets/youtube.svg';
-import './Styles.css';
+import searchIcon from '../../Assets/search.svg';
+import youtubeIcon from '../../Assets/youtube.svg';
+import './Header.css';
 
 const Header = (props) => {
     const {onSearch} = props;
