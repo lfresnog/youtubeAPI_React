@@ -71,9 +71,8 @@ function App() {
                     ...(type==='video'?{video_id:result.id}:null)
                 }
               });
-              console.log(results);
-              setID(results);
-              console.log(results[0].video_id)
+              console.log(results[0]);
+              setID(results[0]);
           }); 
     }
   };
@@ -84,7 +83,7 @@ function App() {
 
     {(page === 1)?
     <div className='search_results'>
-      {data.map(elem => {return <VideoCard onID = {onID} onSearch={onSearch} key={elem.title} data={elem} description={elem.description}/>})}
+      {data.map(elem => {return <VideoCard onID = {onID} onSearch={onSearch} key={elem.title} data={elem} type={1} description={elem.description}/>})}
     </div>
     :page === 2?<VideoPage onID ={onID} onSearch={onSearch} data={data} ID={ID}/>:null}
       

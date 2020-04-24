@@ -1,18 +1,29 @@
-.VideoCard{
+.VideoCard1{
     width: 900px;
     height: 180px;
     display: flex;
     margin-bottom: 60px;
 }
 
+.VideoCard2{
+    width: 600px;
+    height: 140px;
+    display: flex;
+    margin-bottom: 60px;
+}
 
-.VideoCard:hover{
+
+.VideoCard1:hover{
+    cursor: pointer;
+}
+
+.VideoCard2:hover{
     cursor: pointer;
 }
 
 .channel{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     display: flex;
     object-fit: contain;
     margin-right: 20px;
@@ -24,12 +35,13 @@
 }
 
 .extra_info{
-    width: 60%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 }
 
 .video{
+    width: 40%;
     display: flex;
     object-fit: contain;
     margin-right: 20px;

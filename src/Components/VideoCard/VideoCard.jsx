@@ -2,12 +2,12 @@ import React from 'react';
 import './VideoCard.css';
 
 const VideoCard = (props) => {
-    const {onSearch,onID,description} = props;
+    const {onSearch,onID,description,type} = props;
     const {miniature,title,channel,date,id,channel_id} = props.data;
     
 
     return(
-    <div className = "VideoCard" onClick={() => {onSearch(id.videoId,'video');onID((id.videoId?id.videoId:channel_id),(id.videoId?'video':'channel'))}}>
+    <div className = {type===1?'VideoCard1':'VideoCard2'} onClick={() => {onSearch(id.videoId,'video');onID((id.videoId?id.videoId:channel_id),(id.videoId?'video':'channel'))}}>
         <div className={(id.videoId)?`video`:`channel`}>
             <img className={(id.videoId)?null:`channel_miniature`} src={miniature} alt="error"/>
         </div>
