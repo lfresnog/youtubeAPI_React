@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import './App.css';
-// import HomePage from '../Components/HomePage';
 import Header from '../Components/Header/Header'
 import VideoCard from '../Components/VideoCard/VideoCard'
 import VideoPage from '../Components/VideoPage/VideoPage'
+import ChannelPage from '../Components/ChannelPage/ChannelPage'
 import axios from 'axios';
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
     if(search){
       axios.get('https://www.googleapis.com/youtube/v3/search',{
         params:{
-          key:'AIzaSyCVP0an4nC3eCCMiuvlthx0Ew6GGk5Z8nk',
-          maxResults:(type==='channel'?15:5),
+          key:'AIzaSyAI99TjLV2uF6La9-vEv5_t2zrlPgddyGo',
+          maxResults:(type==='channel'?10:5),
           part:'snippet',
           order:'viewCount',
           ...(type==='name'?{q:search}:type==='video'?{relatedToVideoId:search,type:'video'}:{channelId:search}),
@@ -45,6 +45,7 @@ function App() {
               console.log(results);
               setData(results);
               setPage(type==='name'?1:type==='video'?2:3);
+              console.log(page);
           }); 
     }
   };
@@ -55,7 +56,7 @@ function App() {
     if(ID){
       axios.get(url,{
         params:{
-          key:'AIzaSyCVP0an4nC3eCCMiuvlthx0Ew6GGk5Z8nk',
+          key:'AIzaSyAI99TjLV2uF6La9-vEv5_t2zrlPgddyGo',
           part:'snippet',
           id:ID
         }
@@ -80,13 +81,12 @@ function App() {
   return (
     <div className="App">
       <Header onSearch={onSearch} clean={clean}/>
-
-    {(page === 1)?
     <div className='search_results'>
-      {data.map(elem => {return <VideoCard onID = {onID} onSearch={onSearch} key={elem.title} data={elem} type={1} description={elem.description}/>})}
-    </div>
-    :page === 2?<VideoPage onID ={onID} onSearch={onSearch} data={data} ID={ID}/>:null}
-      
+      {(page === 1)?
+      data.map(elem => {return <VideoCard onID = {onID} onSearch={onSearch} key={elem.title} data={elem} type={1} description={elem.description}/>})
+      :page === 2?<VideoPage onID ={onID} onSearch={onSearch} data={data} ID={ID}/>
+      :page === 3?<ChannelPage onID ={onID} onSearch={onSearch} ID={ID} data={data}/>:null}
+      </div>
     </div>
     
   );

@@ -7,11 +7,11 @@ const VideoPage = (props) => {
     return(
         <div className='VideoPage'>
             <div className='r_video'>
-            <iframe src={`https://www.youtube.com/embed/${ID.video_id}?autoplay=1&fs=0`} width="1000" height="480" frameBorder="0"></iframe>
+            <iframe title='1' src={`https://www.youtube.com/embed/${ID.video_id}?autoplay=1&fs=0`} width="1000" height="520" frameBorder="0"></iframe>
             <div className='r_info'>
                 <h3>{ID.title}</h3>
                 <div className='r_extra_info'>
-                    <p>{ID.channel}</p>
+                    <p className="name">{ID.channel}</p>
                     <p>{ID.date}</p>
                 </div>
                 <p>{ID.description}</p>

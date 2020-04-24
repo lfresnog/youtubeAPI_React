@@ -1,0 +1,23 @@
+.ChannelPage{
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.channel_miniature{
+    border-radius: 50%;
+    border: 1px solid #282828;
+}
+
+.channel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.videos{
+    width: 1600px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+}
