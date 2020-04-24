@@ -1,0 +1,18 @@
+.VideoPage{
+    display: flex;
+}
+
+.related_videos{
+    width: 426px;
+    height: fit-content;
+
+}
+
+.results{
+    width:90%;
+    margin-left: 40px;
+}
+
+.video{
+    
+}

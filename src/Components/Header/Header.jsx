@@ -4,12 +4,12 @@ import youtubeIcon from '../../Assets/youtube.svg';
 import './Header.css';
 
 const Header = (props) => {
-    const {onSearch} = props;
+    const {onSearch,clean} = props;
     
     return(
     <div className = "Header">
 
-        <div className = "logo">
+        <div className = "logo" onClick={()=>clean()}>
             <img className="youtubeIcon" src={youtubeIcon} alt="1"/>
         </div>
 

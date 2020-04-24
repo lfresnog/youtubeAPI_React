@@ -2,13 +2,14 @@ import React from 'react';
 import './VideoCard.css';
 
 const VideoCard = (props) => {
-    const {miniature,title,channel,date,description,id} = props.data;
-    const {onSearch} = props;
+    const {onSearch,onID,description} = props;
+    const {miniature,title,channel,date,id,channel_id} = props.data;
+    
 
     return(
-    <div className = "VideoCard" onClick={() => onSearch(id.videoId,'id')}>
+    <div className = "VideoCard" onClick={() => {onSearch(id.videoId,'video');onID((id.videoId?id.videoId:channel_id),(id.videoId?'video':'channel'))}}>
         <div className={(id.videoId)?`video`:`channel`}>
-            <img src={miniature} alt="error"/>
+            <img className={(id.videoId)?null:`channel_miniature`} src={miniature} alt="error"/>
         </div>
         <div className="info">
             <h3>{title}</h3>
@@ -16,7 +17,7 @@ const VideoCard = (props) => {
                 <p>{channel}</p>
                 <p>{date}</p>
             </div>
-            <p>{description}</p>
+            {description?<p>{description}</p>:null}
         </div>
     </div>
     );

@@ -5,6 +5,7 @@
     margin-bottom: 60px;
 }
 
+
 .VideoCard:hover{
     cursor: pointer;
 }
@@ -17,8 +18,13 @@
     margin-right: 20px;
 }
 
+.channel_miniature{
+    border-radius: 50%;
+    border: 1px solid #282828;
+}
+
 .extra_info{
-    width: 400px;
+    width: 60%;
     display: flex;
     justify-content: space-between;
 }
