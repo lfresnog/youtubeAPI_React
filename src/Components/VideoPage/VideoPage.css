@@ -2,17 +2,16 @@
     width: 1450px;
     height: fit-content;
     display: flex;
+    justify-content: center;
 }
 
 .related_videos{
     width: 426px;
     height: fit-content;
-    margin-right: 150px ;
-
 }
 
 .results{
-    width:90%;
+    width:70%;
     margin-left: 150px;
 }
 
